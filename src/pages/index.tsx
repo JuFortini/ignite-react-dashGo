@@ -10,6 +10,7 @@ export default function SignIn() {
       justify="center"
     >
       <Flex
+        as="form"
         w="100%"
         maxWidth={360}
         bg="gray.700"
