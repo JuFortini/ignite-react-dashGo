@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Th, Thead, Text, Tr } from "@chakra-ui/react";
+import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Th, Thead, Text, Tr, useBreakpointValue } from "@chakra-ui/react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 
 import { Header } from "../../components/Header";
@@ -6,6 +6,12 @@ import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 
 export default function UserList() {
+
+    const isLargeWindow = useBreakpointValue({
+        base: false,
+        large: true,
+    })
+
     return (
         <Box>
             <Header />
@@ -20,9 +26,9 @@ export default function UserList() {
                         <Heading fontWeight="normal" size="lg">Usuários</Heading>
                         <Button
                         as="a"
-                        leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+                        leftIcon={<Icon as={RiAddLine} fontSize={["16", "20"]} />}
                         size="sm"
-                        fontSize="sm"
+                        fontSize={["xs", "sm"]}
                         colorScheme="pink"
                         >
                             Criar novo
@@ -32,78 +38,83 @@ export default function UserList() {
                     <Table colorScheme="whiteAlpha" my="10">
                         <Thead>
                             <Tr>
-                                <Th><Checkbox colorScheme="pink"/></Th>
+                                <Th px={["4", "4", "6"]} color="gray.300" width="8">
+                                    <Checkbox colorScheme="pink"/>
+                                </Th>
                                 <Th>USUÁRIO</Th>
-                                <Th>DATA DE CADASTRO</Th>
-                                <Th></Th>
+                                {isLargeWindow && <Th>DATA DE CADASTRO</Th>}
+                                {isLargeWindow && <Th></Th>}
                             </Tr>
                         </Thead>
 
                         <Tbody>
                             <Tr>
-                                <Td><Checkbox colorScheme="pink" /></Td>
+                                <Td px={["4", "4", "6"]}><Checkbox colorScheme="pink" /></Td>
                                 <Td>
                                     <Box>
                                         <Text fontWeight="medium">Jucimara Fortini</Text>
                                         <Text fontSize="sm" color="gray.300">jucimaraafortini@gmail.com</Text>
                                     </Box>
                                 </Td>
-                                <Td>23 de Abril, 2022</Td>
-                                <Td>
-                                    <Button
-                                    as="a"
-                                    leftIcon={<Icon as={RiPencilLine} />}
-                                    size="xs"
-                                    fontSize="xs"
-                                    colorScheme="whiteAlpha"
-                                    >
-                                        Editar
-                                    </Button>
-                                </Td>
+                                {isLargeWindow && <Td>23 de Abril, 2022</Td>}
+                                {isLargeWindow && 
+                                    <Td>
+                                        <Button
+                                        as="a"
+                                        leftIcon={<Icon as={RiPencilLine} />}
+                                        size="xs"
+                                        fontSize="xs"
+                                        colorScheme="whiteAlpha"
+                                        >
+                                            Editar
+                                        </Button>
+                                    </Td>}
                             </Tr>
 
                             <Tr>
-                                <Td><Checkbox colorScheme="pink" /></Td>
+                                <Td px={["4", "4", "6"]}><Checkbox colorScheme="pink" /></Td>
                                 <Td>
                                     <Box>
                                         <Text fontWeight="medium">Jucimara Fortini</Text>
                                         <Text fontSize="sm" color="gray.300">jucimaraafortini@gmail.com</Text>
                                     </Box>
                                 </Td>
-                                <Td>23 de Abril, 2022</Td>
-                                <Td>
-                                    <Button
-                                    as="a"
-                                    leftIcon={<Icon as={RiPencilLine} />}
-                                    size="xs"
-                                    fontSize="xs"
-                                    colorScheme="whiteAlpha"
-                                    >
-                                        Editar
-                                    </Button>
-                                </Td>
+                                {isLargeWindow && <Td>23 de Abril, 2022</Td>}
+                                {isLargeWindow && 
+                                    <Td>
+                                        <Button
+                                        as="a"
+                                        leftIcon={<Icon as={RiPencilLine} />}
+                                        size="xs"
+                                        fontSize="xs"
+                                        colorScheme="whiteAlpha"
+                                        >
+                                            Editar
+                                        </Button>
+                                    </Td>}
                             </Tr>
 
                             <Tr>
-                                <Td><Checkbox colorScheme="pink" /></Td>
+                                <Td px={["4", "4", "6"]}><Checkbox colorScheme="pink" /></Td>
                                 <Td>
                                     <Box>
                                         <Text fontWeight="medium">Jucimara Fortini</Text>
                                         <Text fontSize="sm" color="gray.300">jucimaraafortini@gmail.com</Text>
                                     </Box>
                                 </Td>
-                                <Td>23 de Abril, 2022</Td>
-                                <Td>
-                                    <Button
-                                    as="a"
-                                    leftIcon={<Icon as={RiPencilLine} />}
-                                    size="xs"
-                                    fontSize="xs"
-                                    colorScheme="whiteAlpha"
-                                    >
-                                        Editar
-                                    </Button>
-                                </Td>
+                                {isLargeWindow && <Td>23 de Abril, 2022</Td>}
+                                {isLargeWindow && 
+                                    <Td>
+                                        <Button
+                                        as="a"
+                                        leftIcon={<Icon as={RiPencilLine} />}
+                                        size="xs"
+                                        fontSize="xs"
+                                        colorScheme="whiteAlpha"
+                                        >
+                                            Editar
+                                        </Button>
+                                    </Td>}
                             </Tr>
                         </Tbody>
 

@@ -13,17 +13,17 @@ export default function CreateUser() {
             <Flex w="100%" maxWidth={1480} mx="auto" px="6" my="6">
                 <Sidebar />
 
-                <Box flex="1" bg="gray.800" borderRadius={8} p="8">
+                <Box flex="1" bg="gray.800" borderRadius={8} p={["6", "8"]}>
                     <Heading size="lg" fontWeight="normal">Criar usuário</Heading> 
 
                     <Divider my="8" borderColor="gray.700" />
 
                     <VStack spacing="8">
-                        <SimpleGrid w="100%" spacing="8" minChildWidth="240px">
+                        <SimpleGrid w="100%" spacing={["6", "8"]} minChildWidth="240px">
                             <Input name="name" label="Nome completo"/>
                             <Input name="email" type="email" label="E-mail"/>       
                         </SimpleGrid>
-                        <SimpleGrid w="100%" spacing="8" minChildWidth="240px">
+                        <SimpleGrid w="100%" spacing={["6", "8"]} minChildWidth="240px">
                             <Input name="password" type="password" label="Senha"/>
                             <Input name="password_confirmation" type="password" label="Confirmação da senha"/> 
                         </SimpleGrid>
