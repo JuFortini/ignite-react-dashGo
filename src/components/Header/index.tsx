@@ -22,13 +22,13 @@ export function Header() {
           as="header"
           w="100%"
           h="20"
-          maxWidth={1480}
+          maxWidth={1480} 
           px="6"
           mx="auto"
           mt="4"
           align="center"
         >
-
+          
 			{!isLargeWindow &&
 				<IconButton
 				  aria-label="Abrir navegação"
